@@ -8,13 +8,15 @@ to improve or modify its behavior/restrictions.
 
 ## Warnings
 
-Please note that by doing so your Klipper UI (Mainsail, Fluidd, KlipperScreen, etc) will consider
-the Klipper installation to be "dirty" and will show a warning message.
+> [!CAUTION]
+> Applying these modifications will cause your Klipper UI
+> (Mainsail, Fluidd, KlipperScreen, etc) to consider
+> the Klipper installation "dirty" and will show a warning message.
 
 This is expected behavior, as these scripts modify the source code.
 
 However, it is important to understand that by putting the software in that state,
-you will no longer be able to update it through the UI without losing the modifications
+**you will no longer be able to update it through the UI** without losing the modifications
 made by these scripts.
 
 A [klipper_update.sh script](#3-klipper_updatesh) is provided to help you update
@@ -22,6 +24,11 @@ Klipper while preserving the modifications made by these scripts.
 
 Using the update script you can keep your Klipper installation up to date
 and continue to use the modifications.
+
+> [!NOTE]
+> You will need to use the `klipper_update.sh` script
+> to perform updates of Klipper after using
+> any of the other scripts in this repository.
 
 ## Installation
 
