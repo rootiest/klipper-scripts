@@ -1,22 +1,24 @@
 # Rootiest Klipper Scripts
 
-This repository contains a collection of scripts designed to enhance and customize the functionality of Klipper firmware.
+This repository contains a collection of scripts designed to enhance
+and customize the functionality of Klipper firmware.
 
-These scripts allow you to apply patches to the Klipper firmware source code to improve or modify its behavior/restrictions.
+These scripts allow you to apply patches to the Klipper firmware source code
+to improve or modify its behavior/restrictions.
 
 ## Warnings
 
 Please note that by doing so your Klipper UI (Mainsail, Fluidd, KlipperScreen, etc) will consider
 the Klipper installation to be "dirty" and will show a warning message.
 
-This is expected behavior, as the scripts modify the source code.
+This is expected behavior, as these scripts modify the source code.
 
 However, it is important to understand that by putting the software in that state,
 you will no longer be able to update it through the UI without losing the modifications
 made by these scripts.
 
-A [klipper_update.sh script](#3-klipperupdatesh) is provided to help you update Klipper
-while preserving the modifications made by these scripts.
+A [klipper_update.sh script](#3-klipper_updatesh) is provided to help you update
+Klipper while preserving the modifications made by these scripts.
 
 Using the update script you can keep your Klipper installation up to date
 and continue to use the modifications.
@@ -35,7 +37,8 @@ The scripts can then be found in the `~/klipper-scripts` directory.
 
 ### 1. `relax_mcu_timing.sh`
 
-This script modifies the `TRSYNC_TIMEOUT` value in the `mcu.py` file to relax strict MCU timing requirements,
+This script modifies the `TRSYNC_TIMEOUT` value in the `mcu.py` file
+to relax strict MCU timing requirements,
 helping to resolve "Timeout while homing probe" or "Timeout with MCU" errors.
 
 #### When to Use
@@ -61,8 +64,9 @@ or it will only display the usage instructions.
 
 ### 2. `neopixel_adjust.sh`
 
-This script adjusts the `MAX_MCU_SIZE` value in the `neopixel.py` file based on your LED strip configuration
-(RGB or RGBW and the number of LEDs) allowing longer LED strips to be used with Klipper.
+This script adjusts the `MAX_MCU_SIZE` value in the `neopixel.py` file
+based on your LED strip configuration (RGB or RGBW and the number of LEDs)
+allowing longer LED strips to be used with Klipper.
 
 #### When to Use
 
@@ -122,19 +126,23 @@ Simply run the script to update Klipper:
 
 ## License
 
-This project is licensed under the [GNU General Public License v3.0](LICENSE). See the `LICENSE` file for more details.
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
+See the `LICENSE` file for more details.
 
 ---
 
 ## Disclaimer
 
-These scripts modify Klipper source files and may cause the Klipper repository verification to fail. Use them at your own risk and ensure you have backups of your configuration files.
+These scripts modify Klipper source files and may cause the Klipper
+repository verification to fail. Use them at your own risk
+and ensure you have backups of your configuration files.
 
 ---
 
 ## Contributions
 
-Contributions, bug reports, and feature requests are welcome! Feel free to open an issue or submit a pull request.
+Contributions, bug reports, and feature requests are welcome!
+Feel free to open an issue or submit a pull request.
 
 ---
 
