@@ -29,6 +29,7 @@ BOLD="\e[1m"
 
 RED="\e[31m"
 GREEN="\e[32m"
+YELLOW="\e[33m"
 BLUE="\e[34m"
 
 MCU_FILE=~/klipper/klippy/mcu.py
@@ -39,9 +40,9 @@ PATCHED_TIMEOUT="0.05"
 if [ -z "$1" ] || [ "$1" == "help" ]; then
   echo -e "${BOLD}This script manages patches for${RESET} ${GREEN}mcu.py${RESET}."
   echo ""
-  echo "The patch adjusts the TRSYNC_TIMEOUT to help resolve 'Timeout while homing probe' errors."
+  echo -e "The patch adjusts the ${YELLOW}TRSYNC_TIMEOUT${RESET} to help resolve 'Timeout while homing probe' errors."
   echo ""
-  echo "${RED}Warning:${RESET} Patching will cause Klipper repo verification to fail."
+  echo -e "${RED}Warning:${RESET} Patching will cause Klipper repo verification to fail."
   echo "Use the 'update' option to pull new updates and reapply the patch automatically."
   echo ""
   echo -e "${BOLD}Usage:${RESET} relax_mcu_timing.sh [install|update|reset|patch|check|help]"
