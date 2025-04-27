@@ -158,8 +158,9 @@ See the [LICENSE](./LICENSE) file for more details.
 
 > [!WARNING]
 > These scripts modify Klipper source files and may cause the Klipper
-> repository verification to fail. Use them at your own risk
-> and ensure you have backups of your configuration files.
+> repository verification to fail.  
+> Use them at your own risk and ensure you have backups
+> of your configuration files.
 
 ---
 
