@@ -25,10 +25,12 @@ Klipper while preserving the modifications made by these scripts.
 Using the update script you can keep your Klipper installation up to date
 and continue to use the modifications.
 
-> [!NOTE]
+> [!IMPORTANT]
 > You will need to use the `klipper_update.sh` script
 > to perform updates of Klipper after using
 > any of the other scripts in this repository.
+
+---
 
 ## Installation
 
@@ -39,6 +41,20 @@ git clone https://github.com/rootiest/klipper-scripts.git ~/klipper-scripts
 ```
 
 The scripts can then be found in the `~/klipper-scripts` directory.
+
+Installing the repository will give you access to all the scripts
+but will not make any modifications to your Klipper installation.
+
+No modifications are made until you run the scripts you wish to use.
+
+Alternative, you can just download the individual scripts you need.
+They all are able to function independently of each other.
+
+However, you may wish to have the `klipper_update.sh` script
+to make updating Klipper easier and there is no real disadvantage to
+installing the repository so you have all the scripts available to use.
+
+---
 
 ## Scripts Overview
 
@@ -134,15 +150,16 @@ Simply run the script to update Klipper:
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](LICENSE).
-See the `LICENSE` file for more details.
+See the [LICENSE](./LICENSE) file for more details.
 
 ---
 
 ## Disclaimer
 
-These scripts modify Klipper source files and may cause the Klipper
-repository verification to fail. Use them at your own risk
-and ensure you have backups of your configuration files.
+> [!WARNING]
+> These scripts modify Klipper source files and may cause the Klipper
+> repository verification to fail. Use them at your own risk
+> and ensure you have backups of your configuration files.
 
 ---
 
