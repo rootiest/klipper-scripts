@@ -25,16 +25,16 @@
 #                                                                               #
 #################################################################################
 
-# ========== Paths ========== #
+# ========== Paths ==========
 KLIPPER_DIR=~/klipper
 MCU_FILE="$KLIPPER_DIR/klippy/mcu.py"
 NEOPIXEL_FILE="$KLIPPER_DIR/klippy/extras/neopixel.py"
 
-# ======== Defauts ========== #
+# ========== Defaults ==========
 DEFAULT_TIMEOUT=0.025
 DEFAULT_SIZE=500
 
-# Color Constants
+# ========== Color Constants ==========
 RESET="\e[0m"
 BOLD_YELLOW="\e[1;33m"
 GREEN="\e[32m"
@@ -44,10 +44,14 @@ YELLOW="\e[33m"
 # ========== Begin ==========
 echo -e "${BOLD_YELLOW}Starting Klipper update process...${RESET}"
 
-# ----- Check for existing patches -----
+# ===== Check for existing patches ============================================
 echo -e "${BOLD_YELLOW}Checking current file states...${RESET}"
 
-# Check mcu.py
+# === === === === === === === === === === === === === === === === === === === #
+#    === === === === Every available patch is handled below === === === ===   #
+# === === === === === === === === === === === === === === === === === === === #
+
+# Check mcu.py ----------------------------------------------------------------
 mcu_current_timeout=$(grep -m 1 "TRSYNC_TIMEOUT" "$MCU_FILE" | grep -o "[0-9.]\+")
 if [ "$mcu_current_timeout" != "$DEFAULT_TIMEOUT" ]; then
   mcu_patched=true
@@ -56,8 +60,9 @@ else
   mcu_patched=false
   echo -e "${YELLOW}mcu.py is stock.${RESET}"
 fi
+# -----------------------------------------------------------------------------
 
-# Check neopixel.py
+# Check neopixel.py -----------------------------------------------------------
 neopixel_current_size=$(grep -m 1 "MAX_MCU_SIZE" "$NEOPIXEL_FILE" | grep -o "[0-9]\+")
 if [ "$neopixel_current_size" != "$DEFAULT_SIZE" ]; then
   neopixel_patched=true
@@ -66,6 +71,11 @@ else
   neopixel_patched=false
   echo -e "${YELLOW}neopixel.py is stock.${RESET}"
 fi
+# -----------------------------------------------------------------------------
+
+# === === === === === === === === === === === === === === === === === === === #
+# === === === === === === === === === === === === === === === === === === === #
+# === === === === === === === === === === === === === === === === === === === #
 
 # ----- Prepare for update -----
 echo -e "${BOLD_YELLOW}Cleaning modified files...${RESET}"
