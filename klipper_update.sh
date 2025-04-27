@@ -104,14 +104,36 @@ rm "$MCU_FILE"
 rm "$NEOPIXEL_FILE"
 
 # ----- Update Klipper repo -----
-echo -e "${BOLD_YELLOW}Pulling latest updates from Klipper repo...${RESET}"
+echo -e "${BOLD_YELLOW}Restoring specific files and pulling latest updates from Klipper repo...${RESET}"
 cd "$KLIPPER_DIR" || {
   echo -e "${RED}Failed to change directory! Exiting.${RESET}"
   exit 1
 }
+
+# Fetch the latest changes
+git fetch --all
+
+# Try to checkout specific files from the remote repository
+echo -e "${BOLD_YELLOW}Attempting to restore mcu.py and neopixel.py from remote...${RESET}"
+if git checkout origin/master -- klippy/mcu.py && git checkout origin/master -- klippy/extras/neopixel.py; then
+  echo -e "${GREEN}Successfully restored mcu.py and neopixel.py from remote.${RESET}"
+else
+  echo -e "${RED}Failed to restore specific files. Fallback to git reset --hard.${RESET}"
+
+  # Fallback to git reset --hard if the targeted restore fails
+  git reset --hard origin/master || {
+    echo -e "${RED}Failed to reset Klipper repository! Exiting.${RESET}"
+    exit 1
+  }
+
+  echo -e "${GREEN}Successfully reset Klipper repo to latest master.${RESET}"
+fi
+
+# Pull the latest updates (in case git checkout didn't catch everything)
 git pull
 
 # ----- Re-apply patches -----
+
 echo -e "${BOLD_YELLOW}Reapplying patches if necessary...${RESET}"
 
 # mcu.py patch
