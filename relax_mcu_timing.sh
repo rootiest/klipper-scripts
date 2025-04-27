@@ -32,6 +32,7 @@ GREEN="\e[32m"
 YELLOW="\e[33m"
 BLUE="\e[34m"
 
+# File and defaults
 MCU_FILE=~/klipper/klippy/mcu.py
 DEFAULT_TIMEOUT="0.025"
 PATCHED_TIMEOUT="0.05"
@@ -43,7 +44,7 @@ if [ -z "$1" ] || [ "$1" == "help" ]; then
   echo -e "The patch adjusts the ${YELLOW}TRSYNC_TIMEOUT${RESET} to help resolve 'Timeout while homing probe' errors."
   echo ""
   echo -e "${RED}Warning:${RESET} Patching will cause Klipper repo verification to fail."
-  echo "Use the 'update' option to pull new updates and reapply the patch automatically."
+  echo -e "Use the ${BLUE}klipper_update.sh${RESET} script to pull new updates and reapply the patch automatically."
   echo ""
   echo -e "${BOLD}Usage:${RESET} relax_mcu_timing.sh [install|update|reset|patch|check|help]"
   echo -e "  ${BLUE}install${RESET}: Install the custom timeout patch."

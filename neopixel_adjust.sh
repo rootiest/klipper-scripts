@@ -23,7 +23,7 @@
 #                                                                               #
 #################################################################################
 
-# Constants for colors
+# Color Constants
 RESET="\e[0m"
 BOLD="\e[1m"
 
@@ -46,6 +46,9 @@ if [ -z "$1" ] || [ "$1" == "help" ]; then
   echo -e "The integer value represents the number of ${BOLD_RED}channels${RESET} per strip."
   echo "This value is used to determine how many LEDs can be controlled by a microcontroller (MCU)."
   echo -e "The script will calculate this value based on the type (${RED}R${GREEN}G${BLUE}B${RESET} or ${RED}R${GREEN}G${BLUE}B${WHITE}W${RESET}) and length of your LED strip."
+  echo ""
+  echo -e "${RED}Warning:${RESET} Patching will cause Klipper repo verification to fail."
+  echo -e "Use the ${BLUE}klipper_update.sh${RESET} script to pull new updates and reapply the patch automatically."
   echo ""
   echo -e "${BOLD}Usage:${RESET} neopixel_adjust.sh [install|reset|check|help]"
   echo -e "  ${BLUE}install${RESET}: Prompt for LED strip information and modify ${GREEN}neopixel.py${RESET} if needed."
