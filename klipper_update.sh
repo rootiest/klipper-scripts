@@ -41,6 +41,27 @@ GREEN="\e[32m"
 RED="\e[31m"
 YELLOW="\e[33m"
 
+# ========== Help Option ==========
+if [[ "$1" == "help" || "$1" == "--help" || "$1" == "-h" ]]; then
+  echo -e "${BOLD_YELLOW}Klipper Update Script${RESET}"
+  echo -e ""
+  echo -e "Usage: klipper_update.sh"
+  echo -e ""
+  echo -e "This script will:"
+  echo -e "  • Detect if any files are patched."
+  echo -e "  • Save the modified values if patches exist."
+  echo -e "  • Remove modified files to avoid conflicts."
+  echo -e "  • Pull the latest updates from the Klipper git repository."
+  echo -e "  • Reapply your patches to the new files."
+  echo -e "  • Restart the Klipper service automatically."
+  echo -e ""
+  echo -e "${BOLD_YELLOW}Arguments:${RESET}"
+  echo -e "  help, --help     Show this help message and exit."
+  echo -e ""
+  echo -e "${YELLOW}Note:${RESET} This script assumes your Klipper directory is located at ~/klipper."
+  exit 0
+fi
+
 # ========== Begin ==========
 echo -e "${BOLD_YELLOW}Starting Klipper update process...${RESET}"
 
