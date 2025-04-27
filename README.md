@@ -6,7 +6,7 @@ and customize the functionality of Klipper firmware.
 These scripts allow you to apply patches to the Klipper firmware source code
 to improve or modify its behavior/restrictions.
 
-## Warnings
+## Warnings \[PLEASE READ BEFORE USING!\]
 
 > [!CAUTION]
 > Applying these modifications will cause your Klipper UI
