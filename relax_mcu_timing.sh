@@ -38,7 +38,7 @@ DEFAULT_TIMEOUT="0.025"
 PATCHED_TIMEOUT="0.05"
 
 # Help
-if [ -z "$1" ] || [ "$1" == "help" ]; then
+if [ -z "$1" ] || [[ "$1" == "help" || "$1" == "--help" || "$1" == "-h" ]]; then
   echo -e "${BOLD}This script manages patches for${RESET} ${GREEN}mcu.py${RESET}."
   echo ""
   echo -e "The patch adjusts the ${YELLOW}TRSYNC_TIMEOUT${RESET} to help resolve 'Timeout while homing probe' errors."

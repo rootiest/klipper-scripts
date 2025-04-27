@@ -41,7 +41,7 @@ NEOFILE=~/klipper/klippy/extras/neopixel.py
 DEFAULT_SIZE=500
 
 # Help
-if [ -z "$1" ] || [ "$1" == "help" ]; then
+if [ -z "$1" ] || [[ "$1" == "help" || "$1" == "--help" || "$1" == "-h" ]]; then
   echo -e "This script adjusts ${BOLD_YELLOW}MAX_MCU_SIZE${RESET} in ${GREEN}neopixel.py${RESET} based on your LED strip."
   echo -e "The integer value represents the number of ${BOLD_RED}channels${RESET} per strip."
   echo "This value is used to determine how many LEDs can be controlled by a microcontroller (MCU)."
